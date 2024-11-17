@@ -1,0 +1,17 @@
+name: On Push to Dev
+
+on:
+  push:
+    branches:
+      - dev  # Trigger the workflow only on pushes to the 'dev' branch
+
+jobs:
+  run-on-dev-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3  # Check out the code from the repository
+
+      - name: Display Branch Name
+        run: echo "This workflow was triggered by a push to the 'dev' branch."
